@@ -47,4 +47,5 @@ peivate Properties hibernateProperties(){
     retrun new HibernatetransactionManager(sf);
     }
 
+
 }
