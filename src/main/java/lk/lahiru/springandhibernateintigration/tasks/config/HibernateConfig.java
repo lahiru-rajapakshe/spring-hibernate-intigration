@@ -13,7 +13,7 @@ import java.util.Properties;
 @Configuration
 @PropertySource("classpath:application.properties")
 @PropertySource("classpath:application-prod.properties")
-
+@EnableTransactionManager
 public class HibernateConfig {
 private final Environment env;
 
