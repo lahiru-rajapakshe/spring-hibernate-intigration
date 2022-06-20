@@ -42,4 +42,8 @@ peivate Properties hibernateProperties(){
 
     }
 
+    public PlatformTransactionManager platformTransactionManager (Sessionfactory sf){
+    retrun new HibernatetransactionManager(sf);
+    }
+
 }
