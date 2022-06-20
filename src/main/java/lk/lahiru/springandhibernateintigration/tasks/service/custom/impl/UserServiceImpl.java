@@ -33,7 +33,7 @@ public class UserServiceImpl implements UserService {
 
     public boolean existsUser(String userIdOrEmail) {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            userDAO.setSession(session);
+
             return userDAO.existsUserByEmailOrId(userIdOrEmail);
         }
     }
@@ -42,8 +42,7 @@ public class UserServiceImpl implements UserService {
                                 String appLocation,
                                 UserDTO user) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            session.beginTransaction();
+
             user.setId(UUID.randomUUID().toString());
 
             if (picture != null) {
@@ -51,7 +50,7 @@ public class UserServiceImpl implements UserService {
             }
             user.setPassword(DigestUtils.sha256Hex(user.getPassword()));
 
-            userDAO.setSession(session);
+
             // DTO -> Entity
             User userEntity = EntityDTOMapper.getUser(user);
             User savedUser = userDAO.save(userEntity);
@@ -68,15 +67,12 @@ public class UserServiceImpl implements UserService {
                 picture.write(picturePath);
             }
 
-            session.getTransaction().commit();
             return user;
         } catch (Throwable t) {
             if (session != null && session.getTransaction() != null) {
                 session.getTransaction().rollback();
             }
             throw new FailedExecutionException("Failed to save the user", t);
-        } finally {
-            session.close();
         }
     }
 
@@ -146,12 +142,10 @@ public class UserServiceImpl implements UserService {
                 Files.deleteIfExists(picturePath);
             }
 
-            session.getTransaction().commit();
+
         } catch (Throwable e) {
             if (session != null && session.getTransaction() != null) session.getTransaction().rollback();
             throw new FailedExecutionException("Failed to update the user", e);
-        } finally {
-            session.close();
         }
     }
 
