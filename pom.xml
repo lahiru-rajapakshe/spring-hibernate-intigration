@@ -1,49 +1,174 @@
+lahiru
+        #7392
+
+        Thilina Upendra — 04/02/2022
+        Lokka oya IJSE ekata giuada
+        *Giyada
+        lahiru — 04/02/2022
+        ado thilinaya
+        api Ijse ekata awa bm, me danuth inne eke, uba iye yaddi yaluwek gedara yana kathawak kiyagena giyane, mn hithuwe yanna athi kyla,ekai msg ekk dawe naththe
+        Thilina Upendra — 04/02/2022
+        ow ow machan
+        mama awa ehe
+        Thilina Upendra — 04/02/2022
+        Welawata oya gedara giye naththe
+        curfew damma ne monday 6  wenakan
+        lahiru — 04/02/2022
+        gedara giya nam aye enna wenneth na mcn. thama ara app eka iwarath na
+        Thilina Upendra — 04/02/2022
+        Ow bn
+        Thilina Upendra — 05/25/2022
+<dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter-params</artifactId>
+    <version>5.8.2</version>
+    <scope>test</scope>
+</dependency>
+        Thilina Upendra — 06/17/2022
+        https://github.com/Direct-Entry-Program-8/google-tasks-clone-backend.git
+        GitHub
+        GitHub - Direct-Entry-Program-8/google-tasks-clone-backend: Google ...
+        Google Tasks Clone - Back-end Using Java EE Servlet Technology - GitHub - Direct-Entry-Program-8/google-tasks-clone-backend: Google Tasks Clone - Back-end Using Java EE Servlet Technology
+        GitHub - Direct-Entry-Program-8/google-tasks-clone-backend: Google ...
+        Thilina Upendra — Today at 12:06 PM
+        <?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<modelVersion>4.0.0</modelVersion>
+Expand
+message.txt
+5 KB
+﻿
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>lk.lahiru</groupId>
-    <artifactId>SpringAndHibernateIntigration</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>SpringAndHibernateIntigration</name>
+    <groupId>lk.ijse.dep8</groupId>
+    <artifactId>servlet-back-end</artifactId>
+    <version>1.0.0</version>
+    <name>servlet-back-end</name>
     <packaging>war</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
-        <junit.version>5.8.1</junit.version>
+        <junit.version>5.7.1</junit.version>
+        <spring.version>5.3.21</spring.version>
     </properties>
 
     <dependencies>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.29</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>yasson</artifactId>
+            <version>2.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-codec</groupId>
+            <artifactId>commons-codec</artifactId>
+            <version>1.15</version>
+        </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>4.5.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>3.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.9.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.212</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.3.21</version>
+        </dependency>
     </dependencies>
 
     <build>
+        <finalName>tasks</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.3.2</version>
+                <version>3.3.1</version>
             </plugin>
         </plugins>
     </build>
