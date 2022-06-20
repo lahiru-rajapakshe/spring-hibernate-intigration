@@ -1,5 +1,6 @@
 package lk.lahiru.springandhibernateintigration.tasks.config;
 
+import org.omg.CORBA.Environment;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jndi.JndiObjectFactoryBean;
@@ -13,13 +14,18 @@ import javax.sql.DataSource;
 @PropertySource("classpath:application-prod.properties")
 
 public class HibernateConfig {
+private final Environment env;
 
+public HibernateConfig(Environment env){
+    this.env=env;
+}
     @Bean
     public DataSource dataSource(){
         JndiObjectFactoryBean jndiDataSource = new JndiObjectFactoryBean();
         jndiDataSource.setJndiName("java:comp/env/jdbc/pool");
         return (DataSource) jndiDataSource.getObject();
     }
+
 
     public LocalSessionFactoryBean sessionFactory(DataSource dataSource){
         LocalSessionFactoryBean lsfb = new LocalSessionFactoryBean();
