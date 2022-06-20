@@ -12,13 +12,15 @@ public abstract class CrudDAOImpl<T extends SuperEntity, ID extends Serializable
         implements CrudDAO<T, ID> {
 
     private final Class<T> entityClsObj;
-    protected Session session;
+    protected SessionFactory sessionFactory;
 
     public CrudDAOImpl() {
         entityClsObj = (Class<T>) (((ParameterizedType) (this.getClass().getGenericSuperclass())).getActualTypeArguments()[0]);
     }
 
-
+public session getSeiion(){
+        return  null;
+}
 
     @Override
     public boolean existsById(ID pk) {

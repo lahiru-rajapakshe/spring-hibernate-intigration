@@ -4,5 +4,6 @@ import org.hibernate.Session;
 
 public interface SuperDAO {
 
+    Session SESSION;
 
 }
