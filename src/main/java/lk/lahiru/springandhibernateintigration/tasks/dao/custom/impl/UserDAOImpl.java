@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Scope("prototype")
 @Component
+@Repository
 public class UserDAOImpl extends CrudDAOImpl<User, String> implements UserDAO {
 
     public UserDAOImpl(@Nullable Session session) {

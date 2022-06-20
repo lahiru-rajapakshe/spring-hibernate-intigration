@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 
 @Scope("prototype")
 @Component
+@Repository
 public class QueryDAOImpl implements QueryDAO {
 
     private Session session;
