@@ -16,6 +16,7 @@ public class AppInitializer implements ServletContextListener {
     public void contextInitialized(ServletContextEvent sce) {
         ctx = new AnnotationConfigApplicationContext();
         ctx.register(AppConfig.class);
+        ctx.register(HibernateConfig.class);
         ctx.refresh();
         sce.getServletContext().setAttribute("ioc", ctx);
     }
