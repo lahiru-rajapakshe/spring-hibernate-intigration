@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 @Scope("prototype")
 @Component
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -145,7 +146,7 @@ public class UserServiceImpl implements UserService {
 
         } catch (Throwable e) {
             if (session != null && session.getTransaction() != null) session.getTransaction().rollback();
-            throw new FailedExecutionException("Failed to update the user", e);
+
         }
     }
 
