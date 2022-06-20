@@ -9,7 +9,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import javax.sql.DataSource;
 
 @Configuration
-
+@PropertySource("classpath:application.properties")
+@PropertySource("classpath:application-prod.properties")
 
 public class HibernateConfig {
 
@@ -26,4 +27,7 @@ public class HibernateConfig {
         lsfb.setPackagesToScan("lk.ijse.dep8.tasks.entity");
         return lsfb;
     }
+
+
+
 }
