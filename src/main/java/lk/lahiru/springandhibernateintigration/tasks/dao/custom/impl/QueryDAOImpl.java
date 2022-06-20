@@ -25,8 +25,5 @@ public class QueryDAOImpl implements QueryDAO {
                 .setParameter(1, taskListId).uniqueResult();
     }
 
-    @Override
-    public void setSession(Session session) {
-        this.session = session;
-    }
+
 }
