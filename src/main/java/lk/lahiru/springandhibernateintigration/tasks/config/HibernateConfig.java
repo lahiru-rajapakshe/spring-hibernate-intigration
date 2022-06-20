@@ -8,6 +8,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 
 
 import javax.sql.DataSource;
+import java.util.Properties;
 
 @Configuration
 @PropertySource("classpath:application.properties")
@@ -34,6 +35,11 @@ public HibernateConfig(Environment env){
         return lsfb;
     }
 
+peivate Properties hibernateProperties(){
+        Properties prop = new Properties();
+        prop.put("hibernate.dialet",env.getRequiredProperty("hibernate.dialet"));
+        prop.put("hibernate.allow.refresh_dialet_entity",env.getRequiredProperty("hibernate.dialet"));
 
+    }
 
 }
