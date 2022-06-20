@@ -24,6 +24,7 @@ public HibernateConfig(Environment env){
     public DataSource dataSource(){
         JndiObjectFactoryBean jndiDataSource = new JndiObjectFactoryBean();
         jndiDataSource.setJndiName("java:comp/env/jdbc/pool");
+        jndiDataSource.setResourcereference(true);
         return (DataSource) jndiDataSource.getObject();
     }
 
